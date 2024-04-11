@@ -1,0 +1,122 @@
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  text-transform: none;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1em auto;
+}
+
+.flex-container .flex-item {
+  box-sizing: border-box;
+  padding: 0 10px;
+  font-size: 0.8em;
+}
+
+.flex-container .flex-item-3 {
+  flex: 0 0 30%;
+}
+
+.flex-container .flex-item-4 {
+  flex: 0 0 23%;
+}
+
+.flex-item .icon {
+  display: grid;
+  width: 140px;
+  height: 140px;
+  margin: 2px auto;
+
+  border: 3px solid black;
+  border-radius: 20px;
+}
+
+.flex-container .icon img {
+  margin: auto;
+  width: 80%;
+  height: 80%;
+}
+
+.flex-container .icon-caption {
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.7em;
+  margin-top: 1em;
+}
+
+.flex-container .icon-description {
+  font-size: 0.5em;
+  margin-top: 1em;
+}
+
+.bg-1-3-knallig {
+  background-color: #009480;
+}
+
+.bg-2-3-knallig {
+  background-color: #800094;
+}
+
+.bg-3-3-knallig {
+  background-color: #948000;
+}
+
+.bg-1-4-knallig {
+  background-color: #009480;
+}
+
+.bg-2-4-knallig {
+  background-color: #360094;
+}
+
+.bg-3-4-knallig {
+  background-color: #940014;
+}
+
+.bg-4-4-knallig {
+  background-color: #5e9400;
+}
+
+.bg-1-3-blass {
+  background-color: #a3ccbf;
+}
+
+.bg-2-3-blass {
+  background-color: #bfa3cc;
+}
+
+.bg-3-3-blass {
+  background-color: #ccbfa3;
+}
+
+.bg-1-4-blass {
+  background-color: #a3ccbf;
+}
+
+.bg-2-4-blass {
+  background-color: #aba3cc;
+}
+
+.bg-3-4-blass {
+  background-color: #cca3b0;
+}
+
+.bg-4-4-blass {
+  background-color: #c4cca3;
+}
+
+/* BIBTEX STYLES */
+.bibtex-section {
+  height: 90%;
+}
