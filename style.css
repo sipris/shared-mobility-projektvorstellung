@@ -11,6 +11,10 @@
   text-transform: none;
 }
 
+.reveal pre.mermaid {
+  box-shadow: none;
+}
+
 .flex-container {
   display: flex;
   flex-direction: row;
