@@ -314,10 +314,10 @@
         customElements.define("c-ref", CRef);
     </script>
     <script type="module">
-      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      import mermaid from './libs/mermaid-js/dist/mermaid.esm.min.mjs'; // https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs
       mermaid.initialize({ startOnLoad: true });
     </script>
     <bibtex src="./bibliography.bib"></bibtex>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/pcooksey/bibtex-js@1.0.0/src/bibtex_js.js"></script>
+    <script type="text/javascript" src="libs/bibtex_js.js"></script><!-- original code: https://cdn.jsdelivr.net/gh/pcooksey/bibtex-js@1.0.0/src/bibtex_js.js -->
   </body>
 </html>
