@@ -185,12 +185,24 @@
           </div>
         </section>
         <section>
+          <h4>Vorarbeit - Warum nicht ein Metamodell für alles?</h4>
+          <pre class="mermaid" style="height: 100%;">
+            %%{init: {"flowchart": {"htmlLabels": false}} }%%
+            graph BT
+            Ecore["`MMM
+            Ecore`"]
+            Domain[MM \n Domain] -. instanziiert .-> Ecore
+            Analyse[MM \n Analyse Modell] -. instanziiert .-> Ecore
+            Domain -- Abbildung --- Analyse
+            Modell[M \n Modell] -. instanziiert .-> Domain
+            Transf[M \n Transformiertes Modell] -. instanziiert .-> Analyse
+            Modell -- "transformation" --> Transf
+          </pre>
+        </section>
+        <section>
           <h4>Vorarbeit</h4>
-          <img
-            src="resources/shared-mobility-domain.drawio.svg"
-            alt="Domänenmodell Version 0"
-            style="display: block; max-width: none; width: 100%"
-          />
+          <div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#FFFFFF&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;Electron\&quot; modified=\&quot;2024-04-17T16:37:52.373Z\&quot; agent=\&quot;5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/20.2.3 Chrome/102.0.5005.167 Electron/19.0.11 Safari/537.36\&quot; etag=\&quot;NZAB6sWcB-5QsaOn9g5b\&quot; version=\&quot;20.2.3\&quot; type=\&quot;device\&quot;&gt;&lt;diagram id=\&quot;WgFlQ38J__iqkBfa8fua\&quot; name=\&quot;Page-1\&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+          <script type="text/javascript" src="libs/viewer-static.min.js"></script>
         </section>
         <section>
             <h4>Zeitplan</h4>
@@ -230,7 +242,6 @@
               Finalisierung Modell und Abbildung  :             f, after i3, 15d
               Domänenmodell (final)               : milestone,  after f
             </pre>
-            <c-ref data-refs="barrigaDesignCodeGeneration2023"></c-ref> <!-- TODO: it is just a test :) -->
         </section>
         <section class="bibtex-section">
           <h4>Quellen</h4>
