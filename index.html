@@ -186,18 +186,10 @@
         </section>
         <section>
           <h4>Vorarbeit - Warum nicht ein Metamodell für alles?</h4>
-          <pre class="mermaid" style="height: 100%;">
-            %%{init: {"flowchart": {"htmlLabels": false}} }%%
-            graph BT
-            Ecore["`MMM
-            Ecore`"]
-            Domain[MM \n Domain] -. instanziiert .-> Ecore
-            Analyse[MM \n Analyse Modell] -. instanziiert .-> Ecore
-            Domain -- Abbildung --- Analyse
-            Modell[M \n Modell] -. instanziiert .-> Domain
-            Transf[M \n Transformiertes Modell] -. instanziiert .-> Analyse
-            Modell -- "transformation" --> Transf
-          </pre>
+          <!-- <ul>
+            <li>Separation of concerns</li>
+          </ul> -->
+          <object data="resources/transformation.svg" style="display: block; margin: auto"></object>
         </section>
         <section>
           <h4>Vorarbeit</h4>
