@@ -16,8 +16,23 @@
 
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-venn.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.9.0/themes/pastel.min.js"></script>
+    <style>
+      #sota-container {
+        width: 550px;
+        height: 550px;
+        margin: 0 auto;
+        padding: 0;
+      }
+    </style>
   </head>
   <body>
+    <script type="module">
+      import mermaid from './libs/mermaid-js/dist/mermaid.esm.min.mjs'; // https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs
+      mermaid.initialize({ startOnLoad: true });
+    </script>
     <div class="reveal">
       <div class="slides">
         <section>
@@ -185,16 +200,113 @@
           </div>
         </section>
         <section>
-          <h4>Vorarbeit - Warum nicht ein Metamodell für alles?</h4>
-          <!-- <ul>
-            <li>Separation of concerns</li>
-          </ul> -->
-          <object data="resources/transformation.svg" style="display: block; margin: auto"></object>
+          <h4>Stand der Wissenschaft und Technik und Abgrenzung</h4>
+          <div id="sota-container"></div>
+          <c-ref hidden data-refs="schwickerath2023toolsupported|boltz2024dfd-mm|walter2023attack|hahner2023uncertainty|ISO27000sec|mobidatalab2022sota-mobility-data-standards|omf2020mds|wendering2024UntershiedeMobilitaetsFormen|Ke2020ride-pooling|iso2019-17515-3"></c-ref>
+          <script src="sota.js"></script>
         </section>
         <section>
-          <h4>Vorarbeit</h4>
-          <div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#FFFFFF&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;Electron\&quot; modified=\&quot;2024-04-17T16:37:52.373Z\&quot; agent=\&quot;5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/20.2.3 Chrome/102.0.5005.167 Electron/19.0.11 Safari/537.36\&quot; etag=\&quot;NZAB6sWcB-5QsaOn9g5b\&quot; version=\&quot;20.2.3\&quot; type=\&quot;device\&quot;&gt;&lt;diagram id=\&quot;WgFlQ38J__iqkBfa8fua\&quot; name=\&quot;Page-1\&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
-          <script type="text/javascript" src="libs/viewer-static.min.js"></script>
+          <section>
+            <h4>Vorarbeit - Eigene Vorarbeit</h4>
+            <!-- <span style="font-style: italic;">A mobility case study framework for validating uncertainty impact analyses regarding confidentiality</span> -->
+            <div class="flex-container">
+              <div class="flex-item flex-item-2">
+                <div class="icon bg-1-3-blass">
+                  <img
+                    src="resources/icons/thesis.png"
+                    alt="Erfahrungen aus der Bachelorarbeit"
+                  />
+                </div>
+                <div class="icon-caption">
+                  <p>Erfahrungen aus der Bachelorarbeit</br><c-ref data-refs="priss2022uia">Priss 2022</c-ref></p>
+                  <ul>
+                    <li>Fallstudie</li>
+                    <li>EMF und Sicherheitsanalysen</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex-item flex-item-2">
+                <div class="icon bg-1-3-blass">
+                  <img
+                    src="resources/icons/model-icon-no-fill.drawio.svg"
+                    alt="Shared Mobility Domänenmodell [Version 0]"
+                  />
+                </div>
+                <div class="icon-caption">Shared Mobility Domänenmodell</br>[Version 0]</div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <h4>Vorarbeit - Domänenmodell</h4>
+            <div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;Electron\&quot; modified=\&quot;2024-04-18T23:56:32.978Z\&quot; agent=\&quot;5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/20.2.3 Chrome/102.0.5005.167 Electron/19.0.11 Safari/537.36\&quot; etag=\&quot;a_r53KyHSRIBpsZJ-nUe\&quot; version=\&quot;20.2.3\&quot; type=\&quot;device\&quot;&gt;&lt;diagram id=\&quot;bN-NfYwC3BBJzQm7ZIsA\&quot; name=\&quot;Page-1\&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+            <script type="text/javascript" src="libs/viewer-static.min.js"></script>
+          </section>
+        </section>
+        <section>
+          <h4>Ziele und Methodik</h4>
+          <ul style="font-size: 24px;">
+            <li>
+              Forscher (im Fokus stehen insbesondere die MobilityLab Forscher) ermöglichen schnell und möglichst einfach Shared Mobility Systeme auf sicherheitsrelevante Aspekte zu untersuchen
+              <ul class="fragment fade-in">
+                <li>
+                  (G1) Einfache und schnelle Erstellung von Modellen von Shared Mobility Systemen
+                  <ul class="fragment fade-in">
+                    <li style="font-style: italic;">Bereitstellung eines maschinenlesbaren Domänenmodells</li>
+                  </ul>
+                </li>
+                <li class="fragment fade-in">
+                  (G2) Einfache und schnelle Durchführung von Sicherheitsanalysen auf Modellen von Shared Mobility Systemen
+                  <ul class="fragment fade-in">
+                    <li style="font-style: italic;">Bereitstellung von Abbildungsregeln</li>
+                  </ul>
+                </li>
+                <li class="fragment fade-in">
+                  (G3) Guidelines für die Durchführung von Fallstudien
+                  <ul class="fragment fade-in">
+                    <li>Durchführung und ausführliche Dokumentation einer Fallstudie</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <section>
+            <h4>Beschreibung des Arbeitsplans</h4>
+            <div style="font-size: 24px;">
+              <p>Bearbeitung der Arbeitspakete erfolgt inkrementell. Für die Bearbeitung sind 2,5 Monate angesetzt.</p>
+              <ul>
+                <li class="fragment fade-in">
+                  (A1) Maschinenlesbares Domänenmodell
+                  <ul class="fragment fade-in">
+                    <li>Umfang: Ridepooling</li>
+                    <li>Methode: Domänenstrucktur und Bedürfnisse der MobilityLab Forscher als ein Metamodell in EMF festhalten</li>
+                    <li>Erwartetes Ergeblis: Metamodell für Shared Mobility Systeme</li>
+                  </ul>
+                </li>
+                <li class="fragment fade-in">
+                  (A2) Abbildungsregeln
+                  <ul class="fragment fade-in">
+                    <li>Umfang: Datenflussdiagramme (DFD)</li>
+                    <li>Methode: Ähnlichkeiten zwischen Quell- und Zielmetamodell als Abbildungsregeln implementieren</li>
+                    <li>Erwartetes Ergeblis: Abbildungsregeln zwishcen Shared Mobility Domäne und DFD</li>
+                  </ul>
+                </li>
+                <li class="fragment fade-in">
+                  (A3) Fallstudie
+                  <ul class="fragment fade-in">
+                    <li>Umfang: </li>
+                    <li>Methode: Aufbau eines Falls; modellierung des Falls; transformation in zum Zielmetamodell; Durchführung der Sicherheitsanalyse; Festhalten der Befunde</li>
+                    <li>Erwartetes Ergeblis: Ausführlich dokumentierte Fallstudie</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section>
+            <h4>Warum nicht ein Metamodell für alles?</h4>
+            <object data="resources/transformation.svg" style="display: block; margin: auto"></object>
+          </section>
         </section>
         <section>
             <h4>Zeitplan</h4>
@@ -206,14 +318,14 @@
               weekday monday
 
               section Organisatorisch
-              Zwischenpräsentation erstellen  :            o-interim, 2024-04-22, 30d
-              Zwischenpräsentation            : milestone, after o-interim
-              Abschlusspräsentation erstellen :            o-final-pres, 2024-07-01, 19d
-              Abschlusspräsentation           : milestone, after o-final-pres
-              Paper schreiben                 :            o-paper, 2024-04-15, 2024-08-02
-              Paper ausbessern                :            o-paper-f, after o-paper, 2024-08-29
-              Paper                           : milestone, after o-paper-f
-              Puffer                          :            o-buffer, 2024-09-01, 2024-09-30
+              Zwischenpräsentation erstellen          :             o-interim, 2024-04-22, 30d
+              Zwischenpräsentation                    : milestone,  after o-interim
+              Abschlusspräsentation erstellen         :             o-final-pres, 2024-07-01, 19d
+              Abschlusspräsentation                   : milestone,  after o-final-pres
+              Paper schreiben                         :             o-paper, 2024-04-15, 2024-08-02
+              Paper ausbessern                        :             o-paper-f, after o-paper, 2024-08-29
+              Paper                                   : milestone,  after o-paper-f
+              Puffer                                  :             o-buffer, 2024-09-01, 2024-09-30
 
               section Operativ
               Erweiterung/Verfeinerung identifizieren :             i1-refinement,     2024-04-22, 16d
@@ -223,21 +335,66 @@
               Domänenmodell (v1)                      : milestone,  after i1-evaluation
 
               section Operativ Iteration 2
-              Iteration 2                         :             i2, after i1-evaluation, 14d
-              Domänenmodell (v2)                  : milestone,  after i2
+              Iteration 2                             :             i2, after i1-evaluation, 14d
+              Domänenmodell (v2)                      : milestone,  after i2
 
               section Operativ Iteration 3
-              Iteration 3                         :             i3, after i2, 14d
-              Domänenmodell (v3)                  : milestone,  after i3
+              Iteration 3                             :             i3, after i2, 14d
+              Domänenmodell (v3)                      : milestone,  after i3
 
               section Operativ Modell finalisieren
-              Finalisierung Modell und Abbildung  :             f, after i3, 15d
-              Domänenmodell (final)               : milestone,  after f
+              Finalisierung Modell und Abbildung      :             f, after i3, 15d
+              Domänenmodell (final)                   : milestone,  after f
             </pre>
+        </section>
+        <section>
+          <h4>Machbarkeit</h4>
+          <div class="flex-container">
+            <div class="flex-item flex-item-3">
+              <div class="icon bg-1-3-blass">
+                <img
+                  src="resources/icons/experience.png"
+                  alt="Erfahrung"
+                />
+              </div>
+              <div class="icon-caption">Erfahrung</div>
+            </div>
+            <div class="flex-item flex-item-3">
+              <div class="icon bg-1-3-blass">
+                <img
+                  src="resources/icons/model-icon-no-fill.drawio.svg"
+                  alt="Maschinenlesbares Domänenmodell in Version 0"
+                />
+              </div>
+              <div class="icon-caption">Maschinenlesbares Domänenmodell in Version 0</div>
+            </div>
+            <div class="flex-item flex-item-3">
+              <div class="icon bg-1-3-blass">
+                <img
+                  src="resources/icons/schedule.png"
+                  alt="Arbeitsplan und Zeitplan"
+                />
+              </div>
+              <div class="icon-caption">Arbeitsplan und Zeitplan</div>
+            </div>
+          </div>
         </section>
         <section class="bibtex-section">
           <h4>Quellen</h4>
           <div class="bibtex_display" style="overflow-y: auto; height: 100%; font-size: 12px"></div>
+        </section>
+        <section>
+          <h4>Bilder und Icons</h4>
+          <ul style="font-size: 14px;">
+            <li>Titelbild: <a href="https://unsplash.com/@nextbike?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" title="Titelbild">Foto von nextbike auf Unsplash</a></li>
+            <li>Analysis: <a href="https://www.flaticon.com/free-icons/analysis" title="analysis icons">Analysis icons created by monkik - Flaticon</a></li> <!-- https://www.flaticon.com/free-icon/data_993762?term=analysis&page=1&position=2&origin=search&related_id=993762 -->
+            <li>Understanding: <a href="https://www.flaticon.com/free-icons/idea" title="idea icons">Idea icons created by surang - Flaticon</a></li> <!-- https://www.flaticon.com/free-icon/team_1124812 -->
+            <li>Thesis: <a href="https://www.flaticon.com/free-icons/thesis" title="thesis icons">Thesis icons created by Freepik - Flaticon</a></li>
+            <li>Gear: <a href="https://www.flaticon.com/free-icons/settings" title="settings icons">Settings icons created by Gregor Cresnar Premium - Flaticon</a></li> <!-- https://www.flaticon.com/free-icon/settings_563541?term=gear&page=1&position=4&origin=search&related_id=563541 -->
+            <li>Documents: <a href="https://www.flaticon.com/free-icons/paper" title="paper icons">Paper icons created by Freepik - Flaticon</a></li> <!-- https://www.flaticon.com/free-icon/paper_2541979?term=document&page=1&position=6&origin=search&related_id=2541979 -->
+            <li>Erfahrung: <a href="https://www.flaticon.com/free-icons/experience" title="experience icons">Experience icons created by Freepik - Flaticon</a></li>
+            <li>Schedule: <a href="https://www.flaticon.com/free-icons/schedule" title="schedule icons">Schedule icons created by Eucalyp - Flaticon</a></li>
+          </ul>
         </section>
         <section data-visibility="uncounted">
           Backup
@@ -304,16 +461,12 @@
             }
 
             this.style.height = "100%";
-            this.style.fontSize = "10px";
+            // this.style.fontSize = "10px";
 
-            this.append("Zitate: ", this.dataset.refs, ".");
+            this.textContent = "(" + this.textContent + ")";
           }
         }
         customElements.define("c-ref", CRef);
-    </script>
-    <script type="module">
-      import mermaid from './libs/mermaid-js/dist/mermaid.esm.min.mjs'; // https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs
-      mermaid.initialize({ startOnLoad: true });
     </script>
     <bibtex src="./bibliography.bib"></bibtex>
     <script type="text/javascript" src="libs/bibtex_js.js"></script><!-- original code: https://cdn.jsdelivr.net/gh/pcooksey/bibtex-js@1.0.0/src/bibtex_js.js -->

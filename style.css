@@ -28,6 +28,10 @@
   font-size: 0.8em;
 }
 
+.flex-container .flex-item-2 {
+  flex: 0 0 49%;
+}
+
 .flex-container .flex-item-3 {
   flex: 0 0 30%;
 }
